@@ -7,4 +7,3 @@ db.create_all()
 
 # commit the changes
 db.session.commit()
-

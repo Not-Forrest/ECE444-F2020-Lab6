@@ -63,7 +63,6 @@ def test_login_logout(client):
     assert b"Invalid password" in rv.data
 
 
-
 def test_messages(client):
     """Ensure that user can post messages"""
     login(client, app.config["USERNAME"], app.config["PASSWORD"])
@@ -77,7 +76,7 @@ def test_messages(client):
     assert b"<strong>HTML</strong> allowed here" in rv.data
 
 
-#This already tests that messages cannot be deleted without logging in with assert data["status"] == 0
+# This already tests that messages cannot be deleted without logging in with assert data["status"] == 0
 def test_delete_message(client):
     """Ensure the messages are being deleted"""
     rv = client.get("/delete/1")
